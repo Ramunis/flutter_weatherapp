@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:ramunisweatherapp/maps_page.dart';
 import 'package:ramunisweatherapp/ramunisweatherapp/services/constants.dart';
 
 //
@@ -278,11 +279,16 @@ class _HomePageState extends State<HomePage> {
                      Row(
                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                        children: [
-                         const Text(
-                           'Today',
-                           style: TextStyle(
-                             fontWeight: FontWeight.bold,
-                             fontSize: 20.0,
+                         GestureDetector(
+                           onTap: () =>
+                               Navigator.push(context,MaterialPageRoute(builder: (_) => MapSample())), //this will open forecast screen
+                           child: Text(
+                             'Show maps on current location',
+                             style: TextStyle(
+                               fontWeight: FontWeight.w600,
+                               fontSize: 16,
+                               color: _constants.primaryColor,
+                             ),
                            ),
                          ),
                          GestureDetector(
